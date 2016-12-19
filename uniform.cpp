@@ -6,7 +6,6 @@
 #include <fstream>
 
 using namespace std;
-
 																											//declaring a class
 class Customer
 {
@@ -101,10 +100,8 @@ int main(int argc, char** argv)
 		{																									//assign each teller to available
 			teller_array[i].free=true;																		//assign initial value to 0
 			teller_array[i].processtime=0;
-			cout<<"Teller "<<i+1 <<" is available" << '\n';
-			
+			cout<<"Teller "<<i+1 <<" is available" << '\n';	
 		}
-
 		Customer t = bank.front();
 		int c_time = t.getArrivalTime();	
 		int current_time = c_time - 1;
@@ -160,7 +157,6 @@ int main(int argc, char** argv)
 				}
 			//current_time++;
 			}
-		
 			for(int j=0; j<numteller; j++)																	// With everry iteration the value of each
 			{																								//tellers preocess time decreases.
 																											//As it reaches 0, the teller becomes available again	
@@ -173,7 +169,6 @@ int main(int argc, char** argv)
 				{
 					teller_array[j].free = true;
 					cout<<"\nteller " << j+1 <<" is now free";
-				
 				}
 			}
 		}
@@ -206,7 +201,5 @@ int main(int argc, char** argv)
 
 	else 
 		cout<<"\n\nNumber of Customer does not match Process times--CHECK AGAIN";							//the case where the number of inputs in each file dont match
-
-
 return 0;
 }
