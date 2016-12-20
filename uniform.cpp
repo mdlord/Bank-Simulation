@@ -27,17 +27,14 @@ public:
 		arrivaltime=arrival;
 		processtime=process;
 	}
-	int getProcessTime()
-	{
+	int getProcessTime(){
 		return processtime; 
 	}
-	
 	int getArrivalTime(){
 		return arrivaltime;
 	}
 
 };
-
 																											//declaring a class
 class teller
 {
@@ -96,8 +93,7 @@ int main(int argc, char** argv)
 
 		teller teller_array[numteller];
 	
-		for(int i=0; i<numteller; i++)
-		{																									//assign each teller to available
+		for(int i=0; i<numteller; i++){																									//assign each teller to available
 			teller_array[i].free=true;																		//assign initial value to 0
 			teller_array[i].processtime=0;
 			cout<<"Teller "<<i+1 <<" is available" << '\n';	
@@ -158,15 +154,12 @@ int main(int argc, char** argv)
 			//current_time++;
 			}
 			for(int j=0; j<numteller; j++)																	// With everry iteration the value of each
-			{																								//tellers preocess time decreases.
-																											//As it reaches 0, the teller becomes available again	
-				if(teller_array[j].free == false && teller_array[j].processtime != 0)
-				{
+			{																								//tellers preocess time decreases.																							//As it reaches 0, the teller becomes available again	
+				if(teller_array[j].free == false && teller_array[j].processtime != 0){
 					teller_array[j].processtime--;
 					cout<<"\nTime remaining for teller" <<j+1 <<": " <<teller_array[j].processtime;
 				}
-				if( teller_array[j].processtime == 0)
-				{
+				if( teller_array[j].processtime == 0){
 					teller_array[j].free = true;
 					cout<<"\nteller " << j+1 <<" is now free";
 				}
@@ -176,7 +169,6 @@ int main(int argc, char** argv)
 		for (int k = 0; k < w.size(); k++){																	//adding all the waittimes.
 			wait_timesum = wait_timesum + w[k];	
 			}
-
 		if(wait_timesum<0)
 			wait_timesum = 0;
 
@@ -198,7 +190,6 @@ int main(int argc, char** argv)
 		cout<<"\n->Standard Deviation(Wait Time): "<< sigma ;
 		cout<<"\n\n--------------------------------------------------------------------------\n\n";
 	}
-
 	else 
 		cout<<"\n\nNumber of Customer does not match Process times--CHECK AGAIN";							//the case where the number of inputs in each file dont match
 return 0;
